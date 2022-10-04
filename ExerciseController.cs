@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace la_mia_pizzeria_static
+namespace la_mia_pizzeria_model
 {
     public class ExerciseController : Controller
     {
