@@ -1,4 +1,4 @@
-using la_mia_pizzeria_static.Models;
+using la_mia_pizzeria_model.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace la_mia_pizzeria_static.Controllers;
@@ -48,5 +48,17 @@ public class PizzaController : Controller
     public IActionResult Index()
     {
         return View(pizze);
+    }
+
+    public IActionResult Show(int id)
+    {
+        Pizza? pizza = pizze.Find(x => x.Id == id);
+
+        if (pizza == null)
+        {
+            return View("Error");
+        }
+
+        return View(pizza);
     }
 }
