@@ -1,9 +1,53 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-}
+        Layout = null;
+        List<string[]> pizza = new()
+        {
+            new[]  { "Margherita", "La classica ", "https://www.melarossa.it/wp-content/uploads/2021/02/ricetta-pizza-margherita.jpg?x58780", "4,00" },
+            new[]  { "Diavola", "il Sud", "https://www.melarossa.it/wp-content/uploads/2021/02/ricetta-pizza-margherita.jpg?x58780", "5,00" },
+            new[]  { "Boscaiola", "il Nord ", "https://www.melarossa.it/wp-content/uploads/2021/02/ricetta-pizza-margherita.jpg?x58780", "6,00" },
+            new[]  { "La casa", "Pizza della casa", "https://www.melarossa.it/wp-content/uploads/2021/02/ricetta-pizza-margherita.jpg?x58780", "8,50" },
+        };
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    }
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pizzeria Statica</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+
+        <div style="display:flex;">
+            <main style="margin:auto";>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Prezzo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (string[] e in pizza)
+                            {
+                                <tr >
+                                    <td>@e[0]</td>
+                                    <td>@e[1]</td>
+                                    <td><img style="width:30px" src=@e[2]></td>
+                                    <td>@e[3] €</td>
+                                </tr>
+                            }
+                    </tbody>
+                </table>
+            </main>
+        </div>
+
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+    </html>
 
